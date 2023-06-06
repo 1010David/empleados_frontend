@@ -4,7 +4,7 @@
       <!-- Contenido de la página -->
     </div>
   </template>
-  
+
   <script>
   export default {
     name: "NombreDelComponente",

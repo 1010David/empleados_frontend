@@ -1,21 +1,17 @@
-// Servicio para realizar peticiones al backend relacionadas con departamentos
+import axios from "axios";
 
-// Ejemplo de función para obtener la lista de departamentos
 export function getDepartamentos() {
-  // Lógica para realizar la petición al backend y obtener la lista de departamentos
+  return axios.get("http://localhost:9090/departamentos");
 }
 
-// Ejemplo de función para agregar un nuevo departamento
-export function agregarDepartamento() {
-  // Lógica para realizar la petición al backend y agregar un nuevo departamento
+export function agregarDepartamento(departamento) {
+  return axios.post("http://localhost:9090/departamentos", departamento);
 }
 
-// Ejemplo de función para actualizar un departamento existente
-export function actualizarDepartamento() {
-  // Lógica para realizar la petición al backend y actualizar un departamento existente
+export function actualizarDepartamento(id, departamento) {
+  return axios.put(`http://localhost:9090/departamentos/${id}`, departamento);
 }
 
-// Ejemplo de función para eliminar un departamento
-export function eliminarDepartamento() {
-  // Lógica para realizar la petición al backend y eliminar un departamento
+export function eliminarDepartamento(id) {
+  return axios.delete(`http://localhost:9090/departamentos/${id}`);
 }

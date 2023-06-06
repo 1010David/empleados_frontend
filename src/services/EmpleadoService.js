@@ -1,21 +1,17 @@
-// Servicio para realizar peticiones al backend relacionadas con empleados
+import axios from "axios";
 
-// Ejemplo de función para obtener la lista de empleados
 export function getEmpleados() {
-  // Lógica para realizar la petición al backend y obtener la lista de empleados
+  return axios.get("http://localhost:9090/empleados");
 }
 
-// Ejemplo de función para agregar un nuevo empleado
-export function agregarEmpleado() {
-  // Lógica para realizar la petición al backend y agregar un nuevo empleado
+export function agregarEmpleado(empleado) {
+  return axios.post("http://localhost:9090/empleados", empleado);
 }
 
-// Ejemplo de función para actualizar un empleado existente
-export function actualizarEmpleado() {
-  // Lógica para realizar la petición al backend y actualizar un empleado existente
+export function actualizarEmpleado(id, empleado) {
+  return axios.put(`http://localhost:9090/empleados/${id}`, empleado);
 }
 
-// Ejemplo de función para eliminar un empleado
-export function eliminarEmpleado() {
-  // Lógica para realizar la petición al backend y eliminar un empleado
+export function eliminarEmpleado(id) {
+  return axios.delete(`http://localhost:9090/empleados/${id}`);
 }
