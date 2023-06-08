@@ -1,50 +1,52 @@
 <template>
   <div>
-    <h2>Agregar/Editar Departamento</h2>
-
+    <h2>Formulario de Departamento</h2>
     <form @submit.prevent="guardarDepartamento">
-      <input type="text" v-model="departamento.nombre" placeholder="Nombre" required>
-      <input type="text" v-model="departamento.descripcion" placeholder="Descripción" required>
-      <input type="text" v-model="departamento.ubicacion" placeholder="Ubicación" required>
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" v-model="nombre" />
+      </div>
+      <div>
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" v-model="descripcion" />
+      </div>
+      <div>
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" v-model="ubicacion" />
+      </div>
       <button type="submit">Guardar</button>
     </form>
   </div>
 </template>
 
 <script>
-import { agregarDepartamento, actualizarDepartamento } from "../services/DepartamentoService";
+import { createDepartamento } from "../services/DepartamentoService";
 
 export default {
   name: "DepartamentoForm",
   data() {
     return {
-      departamento: {
-        nombre: "",
-        descripcion: "",
-        ubicacion: ""
-      }
+      nombre: "",
+      descripcion: "",
+      ubicacion: "",
     };
   },
   methods: {
     guardarDepartamento() {
-      if (this.departamento.id) {
-        actualizarDepartamento(this.departamento.id, this.departamento)
-          .then((response) => {
-            // Manejar la respuesta exitosa si es necesario
-          })
-          .catch((error) => {
-            console.error("Error al actualizar el departamento:", error);
-          });
-      } else {
-        agregarDepartamento(this.departamento)
-          .then((response) => {
-            // Manejar la respuesta exitosa si es necesario
-          })
-          .catch((error) => {
-            console.error("Error al agregar el departamento:", error);
-          });
-      }
-    }
-  }
+      const departamento = {
+        nombre: this.nombre,
+        descripcion: this.descripcion,
+        ubicacion: this.ubicacion,
+      };
+
+      createDepartamento(departamento)
+        .then(() => {
+          // Realizar alguna acción después de guardar el departamento
+        })
+        .catch((error) => {
+          console.error("Error al guardar el departamento:", error);
+        });
+    },
+  },
 };
 </script>

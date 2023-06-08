@@ -3,7 +3,11 @@
     <h2>Lista de Empleados</h2>
     <ul>
       <li v-for="empleado in empleados" :key="empleado.id">
-        {{ empleado.nombre }} - {{ empleado.apellido }} - {{ empleado.correo_electronico }}
+        {{ empleado.nombre }} - {{ empleado.apellido }} -
+        {{ empleado.fechaNacimiento }} - {{ empleado.direccion }} -
+        {{ empleado.telefono }} - {{ empleado.correoElectronico }} -
+        {{ empleado.numeroIdentificacion }} - {{ empleado.fechaContratacion }} -
+        {{ empleado.salario }}
       </li>
     </ul>
   </div>
@@ -16,7 +20,7 @@ export default {
   name: "EmpleadoList",
   data() {
     return {
-      empleados: []
+      empleados: [],
     };
   },
   mounted() {
@@ -31,7 +35,7 @@ export default {
         .catch((error) => {
           console.error("Error al obtener la lista de empleados:", error);
         });
-    }
-  }
+    },
+  },
 };
 </script>

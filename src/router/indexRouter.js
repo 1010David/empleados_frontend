@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createRouter, createWebHistory } from "vue-router";
 
 import EmpleadoList from "../components/EmpleadoList.vue";

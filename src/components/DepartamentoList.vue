@@ -3,7 +3,8 @@
     <h2>Lista de Departamentos</h2>
     <ul>
       <li v-for="departamento in departamentos" :key="departamento.id">
-        {{ departamento.nombre }} - {{ departamento.descripcion }} - {{ departamento.ubicacion }}
+        {{ departamento.nombre }} - {{ departamento.descripcion }} -
+        {{ departamento.ubicacion }}
       </li>
     </ul>
   </div>
@@ -16,7 +17,7 @@ export default {
   name: "DepartamentoList",
   data() {
     return {
-      departamentos: []
+      departamentos: [],
     };
   },
   mounted() {
@@ -31,7 +32,7 @@ export default {
         .catch((error) => {
           console.error("Error al obtener la lista de departamentos:", error);
         });
-    }
-  }
+    },
+  },
 };
 </script>

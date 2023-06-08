@@ -1,18 +1,14 @@
+/* eslint-disable */
 <template>
-    <div>
-      <h1>Título de la página</h1>
-      <!-- Contenido de la página -->
-    </div>
-  </template>
+  <div>
+    <h1>Título de la página</h1>
+  </div>
+</template>
 
-  <script>
-  export default {
-    name: "NombreDelComponente",
-    // Puedes agregar lógica adicional si es necesario
-  };
-  </script>
-  
-  <style scoped>
-  /* Estilos específicos de la página */
-  </style>
-  
+<script>
+export default {
+  name: "NombreDelComponente",
+};
+</script>
+
+<style scoped></style>
