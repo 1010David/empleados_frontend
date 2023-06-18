@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Formulario de Empleado</h2>
-    <form @submit.prevent="guardarEmpleado">
+    <form @submit.prevent="guardarEmpleado" class="needs-validation" novalidate>
       <div>
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" v-model="nombre" />
@@ -46,7 +46,7 @@
         <label for="salario">Salario:</label>
         <input type="number" id="salario" v-model="salario" />
       </div>
-      <button type="submit">Guardar</button>
+      <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
   </div>
 </template>
