@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import { createDepartamento } from "../services/DepartamentoService";
+import { agregarDepartamento } from "../services/DepartamentoService";
 
 export default {
   name: "DepartamentoForm",
@@ -115,7 +115,7 @@ export default {
         },
       };
 
-      createDepartamento(departamento)
+      agregarDepartamento(departamento)
         .then(() => {
           // Realizar alguna acción después de guardar el departamento
         })
